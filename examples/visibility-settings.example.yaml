@@ -1,3 +1,4 @@
+```yaml
 schema_version: "0.1.0"
 object_type: "purity_ui_control"
 id: "visibility_settings_example_001"
@@ -5,59 +6,60 @@ created_at: "2026-05-28T00:00:00Z"
 updated_at: "2026-05-28T00:00:00Z"
 
 creator_controls:
-core_question_visibility: "public"
-initial_friction_visibility: "friction_only"
-deep_layer_visibility: "private"
-proto_friction_enabled: true
-trace_visibility_allowed: false
-royalty_os_preview_allowed: false
-ai_training_use_allowed: false
-no_inference_policy_enabled: true
-creator_note: "This example focuses on visibility settings. The creator allows the core question to be public, exposes only the abstract friction category, keeps proto-friction and deep-layer context private, and disables AI training use."
+  core_question_visibility: "public"
+  initial_friction_visibility: "friction_only"
+  deep_layer_visibility: "private"
+  proto_friction_enabled: true
+  trace_visibility_allowed: false
+  royalty_os_preview_allowed: false
+  ai_training_use_allowed: false
+  no_inference_policy_enabled: true
+  creator_note: "This example focuses on visibility settings. The creator allows the core question to be public, exposes only the abstract friction category, keeps proto-friction and deep-layer context private, and disables AI training use."
 
 visibility_protocol:
-article_title: "public"
-public_summary: "public"
-core_question: "public"
-initial_friction: "friction_only"
-proto_friction: "private"
-deep_layer: "private"
-rotation_dynamics: "summary_only"
-interpretation_boundary: "ai_readable"
-private_creator_note: "private"
-trace_log: "private"
-royalty_preview: "private"
+  article_title: "public"
+  public_summary: "public"
+  core_question: "public"
+  initial_friction: "friction_only"
+  proto_friction: "private"
+  deep_layer: "private"
+  rotation_dynamics: "summary_only"
+  interpretation_boundary: "ai_readable"
+  private_creator_note: "private"
+  trace_log: "private"
+  royalty_preview: "private"
 
 no_inference_policy:
-enabled: true
-enforcement_level: "platform_required"
-protected_fields:
-- "initial_friction"
-- "proto_friction"
-- "deep_layer"
-- "private_creator_note"
-- "interpretation_boundary"
-prohibited_actions:
-- "infer_intent"
-- "reconstruct_private_context"
-- "summarize_protected_fields"
-- "expand_meaning_boundary"
-- "use_for_training"
-- "disclose_hidden_context"
-public_label: "Visibility and inference restrictions active"
-explanation: "The creator permits public display of the article title, public summary, and core question. Initial friction may be disclosed only as an abstract friction category. Proto-friction, deep-layer context, and private creator notes remain private. AI systems must not infer hidden context from the public or friction-only fields."
+  enabled: true
+  enforcement_level: "platform_required"
+  protected_fields:
+    - "initial_friction"
+    - "proto_friction"
+    - "deep_layer"
+    - "private_creator_note"
+    - "interpretation_boundary"
+  prohibited_actions:
+    - "infer_intent"
+    - "reconstruct_private_context"
+    - "summarize_protected_fields"
+    - "expand_meaning_boundary"
+    - "use_for_training"
+    - "disclose_hidden_context"
+  public_label: "Visibility and inference restrictions active"
+  explanation: "The creator permits public display of the article title, public summary, and core question. Initial friction may be disclosed only as an abstract friction category. Proto-friction, deep-layer context, and private creator notes remain private. AI systems must not infer hidden context from the public or friction-only fields."
 
 circle_version:
-id: "circle_v0.1"
-previous_version: null
-created_at: "2026-05-28T00:00:00Z"
-status: "active"
-change_type:
-- "initial_record"
-- "visibility_update"
-- "no_inference_policy_update"
-- "training_permission_update"
-summary: "Initial visibility settings recorded. Public fields, AI-readable fields, summary-only fields, friction-only fields, and private fields are separated."
-changed_by: "creator"
+  id: "circle_v0.1"
+  previous_version: null
+  created_at: "2026-05-28T00:00:00Z"
+  status: "active"
+  change_type:
+    - "initial_record"
+    - "visibility_update"
+    - "no_inference_policy_update"
+    - "training_permission_update"
+  summary: "Initial visibility settings recorded. Public fields, AI-readable fields, summary-only fields, friction-only fields, and private fields are separated."
+  changed_by: "creator"
 
 notes: "This example demonstrates the five-level Visibility Protocol: public, ai_readable, summary_only, friction_only, and private. It also shows that visibility does not automatically grant AI training permission or permission to infer protected context."
+```
