@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this specification, please cite it as below."
+
+title: "Purity UI Control Architecture v0.1"
+version: "0.1.0"
+date-released: "2026-05-28"
+
+authors:
+
+* family-names: "Taro"
+  given-names: "Civilization OS Architect"
+
+repository-code: "https://github.com/SamuraiWriter7/purity-ui-control-architecture-v0.1"
+
+keywords:
+
+* "Purity UI"
+* "Creator Control"
+* "Creator Sovereignty"
+* "Epicenter Layer"
+* "Proto-Friction Layer"
+* "Visibility Protocol"
+* "Circle Versioning"
+* "No-Inference Layer"
+* "Royalty OS Visibility"
+* "Epicenter Network"
+* "AI provenance"
+* "source preservation"
+* "semantic origin"
+* "AI governance"
+* "Civilization OS"
+* "Consciousness Circle"
+* "Trace Protocol"
+* "Royalty OS"
+
+license: "MIT"
+
+abstract: |
+Purity UI Control Architecture v0.1 is a draft specification for designing
+creator-controlled user interfaces that preserve, display, and govern
+human-origin epicenters in AI-mediated platforms.
+
+This specification extends the concept of Purity beyond scoring. It focuses
+on how creators can control epicenter visibility, unresolved friction,
+question structure, meaning boundaries, AI inference permissions, trace
+visibility, royalty-readiness previews, circle versioning, platform-level
+disclosure controls, and epicenter network relationships.
+
+The goal is not to judge creators or rank works by purity. The goal is to
+give creators control over how their human-origin meaning structures are
+displayed, accessed, interpreted, and reused in AI ecosystems.
+
+This specification is related to AI Purity Detection Algorithm v0.2, but it
+defines a separate UI-control and creator-sovereignty layer rather than a
+scoring or review-routing algorithm.
