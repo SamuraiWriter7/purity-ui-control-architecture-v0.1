@@ -94,5 +94,5 @@ epicenter_network:
       review_required: false
 
 notes: "This example demonstrates a creator-controlled configuration where the article can show a public core question, friction-only origin signal, public trace visibility, and a non-guaranteed Royalty OS preview while protecting private meaning structures from AI inference and training use."
-```
+
 
