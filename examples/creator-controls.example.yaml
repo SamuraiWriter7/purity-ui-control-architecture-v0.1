@@ -72,10 +72,6 @@ royalty_visibility:
   reference_depth:
     level: "structural_reference"
     confidence: 0.74
-    source_categories:
-      - "ai_search"
-      - "rag_system"
-      - "platform_ai_editor"
   disclaimer_required: true
   required_disclaimer: "This preview is an estimation only. It does not guarantee payment, ownership, entitlement, or final allocation."
 
