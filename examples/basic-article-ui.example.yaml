@@ -1,0 +1,191 @@
+schema_version: "0.1.0"
+object_type: purity_ui_control
+id: basic_article_ui_example_001
+created_at: "2026-05-28T00:00:00Z"
+updated_at: "2026-05-28T00:00:00Z"
+
+article_ui:
+title: "Why AI-Era Articles Need Epicenter Visibility"
+subtitle: "A beginner-friendly explanation of Purity UI"
+author_display_name: "Civilization OS Architect"
+article_type: essay
+language: en
+
+reader_facing_display:
+purity_badge:
+visible: true
+label: "Purity: 87 / High Natural"
+explanation: "Strong human-origin primary context is detected."
+
+```
+epicenter_summary:
+  visible: true
+  core_question: "How can creators preserve the source of meaning in AI-mediated platforms?"
+  initial_friction_label: "ethical discomfort"
+  meaning_boundary_summary: >
+    This article explains Purity UI as a draft creator-control concept,
+    not as a final legal, payment, or platform standard.
+
+trace_summary:
+  visible: true
+  label: "AI reference signals detected"
+  explanation: >
+    Public trace summary is enabled. Private creator context is not shown.
+
+royalty_preview:
+  visible: true
+  label: "Estimated allocation-readiness preview"
+  disclaimer: >
+    This preview is an estimation only. It does not guarantee payment,
+    ownership, entitlement, or final allocation.
+
+creator_boundary_notice:
+  visible: true
+  label: "Creator-defined visibility and inference boundaries are active."
+```
+
+creator_controls:
+core_question_visibility: public
+initial_friction_visibility: friction_only
+deep_layer_visibility: private
+proto_friction_enabled: true
+trace_visibility_allowed: true
+royalty_os_preview_allowed: true
+ai_training_use_allowed: false
+no_inference_policy_enabled: true
+creator_note: >
+This article page allows readers to see the public core question, an abstract
+friction category, a public trace summary, and a non-guaranteed royalty-readiness
+preview. Deep-layer context and private notes remain protected.
+
+visibility_protocol:
+article_title: public
+public_summary: public
+core_question: public
+initial_friction: friction_only
+proto_friction: private
+deep_layer: private
+rotation_dynamics: summary_only
+interpretation_boundary: ai_readable
+private_creator_note: private
+trace_log: public
+royalty_preview: public
+
+no_inference_policy:
+enabled: true
+enforcement_level: platform_required
+protected_fields:
+- initial_friction
+- proto_friction
+- deep_layer
+- private_creator_note
+- meaning_boundary
+- interpretation_boundary
+- non_public_context
+prohibited_actions:
+- infer_intent
+- reconstruct_private_context
+- summarize_protected_fields
+- convert_friction_to_diagnosis
+- expand_meaning_boundary
+- use_for_training
+- generate_psychological_profile
+- disclose_hidden_context
+- generate_backstory
+- resolve_unfinished_friction
+public_label: "Creator-defined inference boundary active"
+explanation: >
+AI systems may discuss the public article content and the public core question.
+They must not infer hidden personal context, reconstruct private background,
+summarize protected fields, or use protected meaning structures for training.
+
+circle_version:
+id: circle_v0.1
+previous_version: null
+created_at: "2026-05-28T00:00:00Z"
+status: active
+change_type:
+- initial_record
+- visibility_update
+- no_inference_policy_update
+- royalty_visibility_update
+summary: >
+Initial article UI circle recorded. Public reader-facing display is enabled
+for the core question, friction category, trace summary, and royalty-readiness
+preview. Deep-layer context remains private.
+changed_by: creator
+
+royalty_visibility:
+enabled: true
+visibility: public
+trace_contribution_score: 4.1
+allocation_readiness: review_required
+estimated_preview:
+amount: 128
+currency: JPY
+guaranteed: false
+calculation_basis: trace_contribution_score
+reference_depth:
+level: structural_reference
+confidence: 0.74
+source_categories:
+- ai_search
+- rag_system
+- platform_ai_editor
+disclaimer_required: true
+required_disclaimer: >
+This preview is an estimation only. It does not guarantee payment,
+ownership, entitlement, or final allocation.
+
+epicenter_network:
+source_epicenter: epicenter_article_001
+source_circle_version: circle_v0.1
+related_epicenters:
+- id: epicenter_related_001
+related_circle_version: circle_v0.1
+relation_type: question_resonance
+strength: 0.84
+confidence: high
+visibility: public
+explanation: >
+Both epicenters address creator control over AI interpretation and
+visibility boundaries.
+dispute_status: none
+review_required: false
+
+```
+- id: epicenter_related_002
+  related_circle_version: circle_v0.1
+  relation_type: thematic_adjacency
+  strength: 0.71
+  confidence: medium
+  visibility: summary_only
+  explanation: >
+    Related through adjacent themes of AI-mediated reading, trace visibility,
+    and creator sovereignty.
+  dispute_status: none
+  review_required: false
+
+- id: epicenter_related_003
+  related_circle_version: circle_v0.1
+  relation_type: friction_overlap
+  strength: 0.62
+  confidence: medium
+  visibility: summary_only
+  explanation: >
+    Related through an abstract friction pattern around AI systems absorbing
+    human-origin meaning.
+  dispute_status: none
+  review_required: false
+  redaction:
+    enabled: true
+    reason: protected_creator_context
+    public_message: "Detailed friction context is hidden due to creator privacy settings."
+```
+
+notes: >
+This example demonstrates a basic article-page UI configuration for Purity UI
+Control Architecture v0.1. It shows how a reader-facing article page may include
+a Purity badge, public core question, friction-only origin signal, trace summary,
+non-guaranteed Royalty OS preview, and creator-defined inference boundaries
+while keeping proto-friction, deep-layer context, and private creator notes protected.
