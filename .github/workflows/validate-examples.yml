@@ -1,106 +1,103 @@
 name: Validate Examples
 
 on:
-push:
-paths:
-- "schemas/purity-ui-control.schema.json"
-- "examples/*.yaml"
-- ".github/workflows/validate-examples.yml"
-pull_request:
-paths:
-- "schemas/purity-ui-control.schema.json"
-- "examples/*.yaml"
-- ".github/workflows/validate-examples.yml"
-workflow_dispatch:
+  push:
+    paths:
+      - "schemas/purity-ui-control.schema.json"
+      - "examples/*.yaml"
+      - ".github/workflows/validate-examples.yml"
+  pull_request:
+    paths:
+      - "schemas/purity-ui-control.schema.json"
+      - "examples/*.yaml"
+      - ".github/workflows/validate-examples.yml"
+  workflow_dispatch:
 
 jobs:
-validate-examples:
-name: Validate YAML examples against JSON Schema
-runs-on: ubuntu-latest
+  validate-examples:
+    name: Validate YAML examples against JSON Schema
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Check out repository
-    uses: actions/checkout@v4
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-  - name: Set up Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: "3.12"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-  - name: Install dependencies
-    run: |
-      python -m pip install --upgrade pip
-      pip install jsonschema PyYAML
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema PyYAML
 
-  - name: Validate examples
-    run: |
-      cat > validate_examples.py <<'PY'
-      import json
-      import sys
-      from pathlib import Path
+      - name: Validate examples
+        run: |
+          cat > validate_examples.py <<'PY'
+          import json
+          import sys
+          from pathlib import Path
 
-      import yaml
-      from jsonschema import Draft202012Validator, FormatChecker
+          import yaml
+          from jsonschema import Draft202012Validator, FormatChecker
 
-      schema_path = Path("schemas/purity-ui-control.schema.json")
+          schema_path = Path("schemas/purity-ui-control.schema.json")
 
-      example_paths = [
-          Path("examples/basic-article-ui.example.yaml"),
-          Path("examples/creator-controls.example.yaml"),
-          Path("examples/visibility-settings.example.yaml"),
-          Path("examples/no-inference-policy.example.yaml"),
-      ]
+          example_paths = [
+              Path("examples/basic-article-ui.example.yaml"),
+              Path("examples/creator-controls.example.yaml"),
+              Path("examples/visibility-settings.example.yaml"),
+              Path("examples/no-inference-policy.example.yaml"),
+          ]
 
-      if not schema_path.exists():
-          print(f"Schema not found: {schema_path}")
-          sys.exit(1)
+          if not schema_path.exists():
+              print(f"Schema not found: {schema_path}")
+              sys.exit(1)
 
-      with schema_path.open("r", encoding="utf-8") as f:
-          schema = json.load(f)
+          with schema_path.open("r", encoding="utf-8") as f:
+              schema = json.load(f)
 
-      validator = Draft202012Validator(
-          schema,
-          format_checker=FormatChecker(),
-      )
-
-      failed = False
-
-      for example_path in example_paths:
-          print(f"Validating {example_path}...")
-
-          if not example_path.exists():
-              print(f"  Example file not found: {example_path}")
-              failed = True
-              continue
-
-          with example_path.open("r", encoding="utf-8") as f:
-              data = yaml.safe_load(f)
-
-          errors = sorted(
-              validator.iter_errors(data),
-              key=lambda error: list(error.path),
+          validator = Draft202012Validator(
+              schema,
+              format_checker=FormatChecker(),
           )
 
-          if errors:
-              failed = True
-              print(f"  Validation failed: {example_path}")
-              for error in errors:
-                  path = ".".join(str(part) for part in error.path)
-                  if not path:
-                      path = "<root>"
-                  print(f"    - Path: {path}")
-                  print(f"      Error: {error.message}")
-          else:
-              print(f"  Passed: {example_path}")
+          failed = False
 
-      if failed:
-          print("Validation failed.")
-          sys.exit(1)
+          for example_path in example_paths:
+              print(f"Validating {example_path}...")
 
-      print("All examples passed validation.")
-      PY
+              if not example_path.exists():
+                  print(f"  Example file not found: {example_path}")
+                  failed = True
+                  continue
 
-      python validate_examples.py
-```
+              with example_path.open("r", encoding="utf-8") as f:
+                  data = yaml.safe_load(f)
 
+              errors = sorted(
+                  validator.iter_errors(data),
+                  key=lambda error: list(error.path),
+              )
+
+              if errors:
+                  failed = True
+                  print(f"  Validation failed: {example_path}")
+                  for error in errors:
+                      path = ".".join(str(part) for part in error.path)
+                      if not path:
+                          path = "<root>"
+                      print(f"    - Path: {path}")
+                      print(f"      Error: {error.message}")
+              else:
+                  print(f"  Passed: {example_path}")
+
+          if failed:
+              print("Validation failed.")
+              sys.exit(1)
+
+          print("All examples passed validation.")
+          PY
+
+          python validate_examples.py
