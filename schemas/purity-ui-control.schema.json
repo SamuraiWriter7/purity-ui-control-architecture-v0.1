@@ -1,0 +1,517 @@
+{
+"$schema": "https://json-schema.org/draft/2020-12/schema",
+"$id": "https://github.com/SamuraiWriter7/purity-ui-control-architecture-v0.1/schemas/purity-ui-control.schema.json",
+"title": "Purity UI Control Schema v0.1",
+"description": "JSON Schema for validating creator-controlled Purity UI control objects, including visibility settings, no-inference policy, circle versioning, royalty visibility, and epicenter network relationships.",
+"type": "object",
+"additionalProperties": false,
+"required": [
+"schema_version",
+"object_type",
+"creator_controls"
+],
+"properties": {
+"schema_version": {
+"type": "string",
+"const": "0.1.0"
+},
+"object_type": {
+"type": "string",
+"const": "purity_ui_control"
+},
+"id": {
+"type": "string",
+"minLength": 1
+},
+"created_at": {
+"type": "string",
+"format": "date-time"
+},
+"updated_at": {
+"type": "string",
+"format": "date-time"
+},
+"creator_controls": {
+"$ref": "#/$defs/creator_controls"
+},
+"visibility_protocol": {
+"$ref": "#/$defs/visibility_protocol"
+},
+"no_inference_policy": {
+"$ref": "#/$defs/no_inference_policy"
+},
+"circle_version": {
+"$ref": "#/$defs/circle_version"
+},
+"royalty_visibility": {
+"$ref": "#/$defs/royalty_visibility"
+},
+"epicenter_network": {
+"$ref": "#/$defs/epicenter_network"
+},
+"notes": {
+"type": "string"
+}
+},
+"$defs": {
+"visibility_level": {
+"type": "string",
+"enum": [
+"public",
+"ai_readable",
+"summary_only",
+"friction_only",
+"private"
+]
+},
+"creator_controls": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"core_question_visibility",
+"initial_friction_visibility",
+"deep_layer_visibility",
+"ai_training_use_allowed",
+"no_inference_policy_enabled"
+],
+"properties": {
+"core_question_visibility": {
+"$ref": "#/$defs/visibility_level"
+},
+"initial_friction_visibility": {
+"$ref": "#/$defs/visibility_level"
+},
+"deep_layer_visibility": {
+"$ref": "#/$defs/visibility_level"
+},
+"proto_friction_enabled": {
+"type": "boolean",
+"default": false
+},
+"trace_visibility_allowed": {
+"type": "boolean",
+"default": false
+},
+"royalty_os_preview_allowed": {
+"type": "boolean",
+"default": false
+},
+"ai_training_use_allowed": {
+"type": "boolean",
+"default": false
+},
+"no_inference_policy_enabled": {
+"type": "boolean",
+"default": false
+},
+"creator_note": {
+"type": "string"
+}
+}
+},
+"visibility_protocol": {
+"type": "object",
+"additionalProperties": false,
+"properties": {
+"article_title": {
+"$ref": "#/$defs/visibility_level"
+},
+"public_summary": {
+"$ref": "#/$defs/visibility_level"
+},
+"core_question": {
+"$ref": "#/$defs/visibility_level"
+},
+"initial_friction": {
+"$ref": "#/$defs/visibility_level"
+},
+"proto_friction": {
+"$ref": "#/$defs/visibility_level"
+},
+"deep_layer": {
+"$ref": "#/$defs/visibility_level"
+},
+"rotation_dynamics": {
+"$ref": "#/$defs/visibility_level"
+},
+"interpretation_boundary": {
+"$ref": "#/$defs/visibility_level"
+},
+"private_creator_note": {
+"$ref": "#/$defs/visibility_level"
+},
+"trace_log": {
+"$ref": "#/$defs/visibility_level"
+},
+"royalty_preview": {
+"$ref": "#/$defs/visibility_level"
+}
+}
+},
+"no_inference_policy": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"enabled"
+],
+"properties": {
+"enabled": {
+"type": "boolean"
+},
+"enforcement_level": {
+"type": "string",
+"enum": [
+"advisory",
+"platform_required",
+"ai_system_required",
+"blocking"
+]
+},
+"protected_fields": {
+"type": "array",
+"items": {
+"type": "string",
+"enum": [
+"initial_friction",
+"proto_friction",
+"deep_layer",
+"private_creator_note",
+"meaning_boundary",
+"interpretation_boundary",
+"non_public_context",
+"circle_version_notes",
+"unresolved_question",
+"body_sensation_marker",
+"silence_marker",
+"private_trace_context"
+]
+},
+"uniqueItems": true
+},
+"prohibited_actions": {
+"type": "array",
+"items": {
+"type": "string",
+"enum": [
+"infer_intent",
+"reconstruct_private_context",
+"summarize_protected_fields",
+"convert_friction_to_diagnosis",
+"expand_meaning_boundary",
+"use_for_training",
+"generate_psychological_profile",
+"disclose_hidden_context",
+"generate_backstory",
+"resolve_unfinished_friction"
+]
+},
+"uniqueItems": true
+},
+"public_label": {
+"type": "string"
+},
+"explanation": {
+"type": "string"
+}
+}
+},
+"circle_version": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"id",
+"created_at",
+"status",
+"change_type"
+],
+"properties": {
+"id": {
+"type": "string",
+"pattern": "^circle_v[0-9]+\.[0-9]+$"
+},
+"previous_version": {
+"type": [
+"string",
+"null"
+]
+},
+"created_at": {
+"type": "string",
+"format": "date-time"
+},
+"status": {
+"type": "string",
+"enum": [
+"draft",
+"active",
+"archived",
+"superseded",
+"deprecated",
+"disputed",
+"reaffirmed"
+]
+},
+"change_type": {
+"type": "array",
+"items": {
+"type": "string",
+"enum": [
+"initial_record",
+"proto_friction_update",
+"friction_update",
+"question_refinement",
+"meaning_boundary_update",
+"visibility_update",
+"no_inference_policy_update",
+"trace_policy_update",
+"royalty_visibility_update",
+"training_permission_update",
+"creator_note_update",
+"network_relationship_update",
+"archival_update",
+"dispute_related_update"
+]
+},
+"minItems": 1,
+"uniqueItems": true
+},
+"summary": {
+"type": "string"
+},
+"changed_by": {
+"type": "string",
+"enum": [
+"creator",
+"platform",
+"reviewer",
+"multi_wing_review",
+"system"
+]
+}
+}
+},
+"royalty_visibility": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"enabled",
+"allocation_readiness",
+"disclaimer_required"
+],
+"properties": {
+"enabled": {
+"type": "boolean"
+},
+"visibility": {
+"$ref": "#/$defs/visibility_level"
+},
+"trace_contribution_score": {
+"type": "number",
+"minimum": 0
+},
+"allocation_readiness": {
+"type": "string",
+"enum": [
+"not_applicable",
+"eligible_for_review",
+"review_required",
+"blocked",
+"disputed",
+"insufficient_evidence",
+"pending_trace_confirmation"
+]
+},
+"estimated_preview": {
+"type": "object",
+"additionalProperties": false,
+"properties": {
+"amount": {
+"type": "number",
+"minimum": 0
+},
+"currency": {
+"type": "string",
+"minLength": 3,
+"maxLength": 3
+},
+"guaranteed": {
+"type": "boolean",
+"const": false
+},
+"calculation_basis": {
+"type": "string"
+}
+}
+},
+"reference_depth": {
+"type": "object",
+"additionalProperties": false,
+"properties": {
+"level": {
+"type": "string",
+"enum": [
+"surface_reference",
+"summary_reference",
+"context_reference",
+"structural_reference",
+"core_reference"
+]
+},
+"confidence": {
+"type": "number",
+"minimum": 0,
+"maximum": 1
+}
+}
+},
+"source_categories": {
+"type": "array",
+"items": {
+"type": "string",
+"enum": [
+"ai_search",
+"rag_system",
+"platform_ai_editor",
+"summary_tool",
+"citation_tool",
+"training_pipeline",
+"evaluation_pipeline",
+"external_agent",
+"unknown"
+]
+},
+"uniqueItems": true
+},
+"disclaimer_required": {
+"type": "boolean"
+},
+"required_disclaimer": {
+"type": "string"
+}
+}
+},
+"epicenter_network": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"source_epicenter",
+"related_epicenters"
+],
+"properties": {
+"source_epicenter": {
+"type": "string",
+"minLength": 1
+},
+"source_circle_version": {
+"type": "string"
+},
+"related_epicenters": {
+"type": "array",
+"items": {
+"$ref": "#/$defs/related_epicenter"
+}
+}
+}
+},
+"related_epicenter": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"id",
+"relation_type",
+"strength"
+],
+"properties": {
+"id": {
+"type": "string",
+"minLength": 1
+},
+"related_circle_version": {
+"type": "string"
+},
+"relation_type": {
+"type": "string",
+"enum": [
+"question_resonance",
+"friction_overlap",
+"meaning_distance",
+"trace_connection",
+"influence_path",
+"version_relationship",
+"shared_context",
+"thematic_adjacency",
+"structural_similarity",
+"divergent_interpretation",
+"disputed_relation",
+"unknown_relation"
+]
+},
+"strength": {
+"type": "number",
+"minimum": 0,
+"maximum": 1
+},
+"confidence": {
+"type": "string",
+"enum": [
+"high",
+"medium",
+"low",
+"review_required",
+"disputed"
+]
+},
+"visibility": {
+"$ref": "#/$defs/visibility_level"
+},
+"explanation": {
+"type": "string"
+},
+"dispute_status": {
+"type": "string",
+"enum": [
+"none",
+"creator_disputed",
+"platform_review",
+"multi_wing_review",
+"resolved",
+"blocked"
+]
+},
+"review_required": {
+"type": "boolean"
+},
+"redaction": {
+"$ref": "#/$defs/redaction"
+}
+}
+},
+"redaction": {
+"type": "object",
+"additionalProperties": false,
+"required": [
+"enabled"
+],
+"properties": {
+"enabled": {
+"type": "boolean"
+},
+"reason": {
+"type": "string",
+"enum": [
+"protected_creator_context",
+"private_trace_context",
+"no_inference_policy",
+"low_confidence",
+"disputed_relation",
+"platform_policy",
+"other"
+]
+},
+"public_message": {
+"type": "string"
+}
+}
+}
+}
+}
