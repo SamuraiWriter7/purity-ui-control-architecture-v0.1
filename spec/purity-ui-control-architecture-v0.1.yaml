@@ -1,0 +1,456 @@
+id: purity-ui-control-architecture-v0.1
+title: Purity UI Control Architecture v0.1
+version: 0.1.0
+status: draft
+repository: purity-ui-control-architecture-v0.1
+license: MIT
+created: "2026-05-28"
+
+summary: >
+  Purity UI Control Architecture v0.1 defines a draft creator-controlled UI
+  architecture for preserving, displaying, governing, and restricting access
+  to human-origin epicenters in AI-mediated platforms.
+
+purpose:
+  - Define a platform-facing UI control layer for Purity-related metadata.
+  - Preserve human-origin epicenters such as friction, questions, and meaning boundaries.
+  - Allow creators to control visibility, AI access, inference permissions, and trace display.
+  - Separate origin display from legal authorship, copyright, payment, and final governance.
+  - Provide a foundation for future UI, API, schema, and platform integration work.
+
+core_thesis: >
+  Purity UI should not be only a score display. It should become a
+  creator-controlled origin interface that governs how human-origin meaning
+  structures are displayed, accessed, interpreted, and circulated.
+
+relationship_to_ai_purity_detection:
+  related_repository: ai-purity-detection-algorithm-v0.2
+  distinction:
+    ai_purity_detection_algorithm: >
+      Estimates origin composition, AI-generated ratio, warning flags,
+      recursive synthetic risk, and review routing.
+    purity_ui_control_architecture: >
+      Controls how origin signals, epicenter structures, visibility boundaries,
+      AI inference permissions, and trace-related UI are displayed and governed.
+  principle: >
+    Purity Detection asks how strong the human-origin signal is.
+    Purity UI Control asks who may see it, how AI may use it, and what must not be inferred.
+
+core_principles:
+  creator_sovereignty:
+    description: >
+      Creator-defined visibility, access, and inference boundaries must remain authoritative.
+    requirement: must
+
+  ai_assistance_neutrality:
+    description: >
+      AI assistance should not be treated as invalid by default. The issue is whether
+      AI-generated structure overwrites or obscures the human-origin epicenter.
+    requirement: must
+
+  privacy_by_default:
+    description: >
+      Deep creator context, unresolved friction, and private meaning structures should
+      remain private unless explicitly disclosed by the creator.
+    requirement: must
+
+  no_silent_inference:
+    description: >
+      AI systems should not silently infer, reconstruct, summarize, or expand protected
+      creator-defined fields beyond permitted boundaries.
+    requirement: must
+
+  allocation_readiness_not_payment:
+    description: >
+      Royalty-related UI may show trace visibility or allocation-readiness previews,
+      but must not guarantee payment, ownership, entitlement, or final allocation.
+    requirement: must
+
+  meaning_relationship_not_ranking:
+    description: >
+      Epicenter network visualization should map meaning relationships and source
+      structures, not rank creators by purity or value.
+    requirement: should
+
+architecture_layers:
+  - id: epicenter_layer
+    name: Epicenter Layer
+    purpose: Visualize the source structure of a work.
+    components:
+      - friction_layer
+      - question_layer
+      - meaning_layer
+    description: >
+      Shows that a work emerged from a human-origin contact point with reality,
+      rather than from empty or purely synthetic data.
+
+  - id: proto_friction_layer
+    name: Proto-Friction Layer
+    purpose: Preserve friction before it becomes fully verbalized.
+    components:
+      - unresolved_friction
+      - fragment_input
+      - silence_marker
+      - ai_completion_control
+    description: >
+      Allows creators to preserve discomfort, intuition, bodily sensation,
+      fragmented notes, or pre-verbal awareness without forcing AI completion.
+
+  - id: visibility_protocol
+    name: Visibility Protocol
+    purpose: Define granular visibility and access controls.
+    components:
+      - public
+      - ai_readable
+      - summary_only
+      - friction_only
+      - private
+    description: >
+      Provides more precise access control than a simple public/private switch.
+
+  - id: circle_versioning
+    name: Circle Versioning
+    purpose: Track evolution of meaning structures.
+    components:
+      - circle_version_id
+      - previous_version
+      - change_type
+      - change_summary
+    description: >
+      Prevents a creator's early thought from being frozen as a permanent identity.
+
+  - id: no_inference_layer
+    name: No-Inference Layer
+    purpose: Define fields and actions that AI systems must not infer or reconstruct.
+    components:
+      - protected_fields
+      - prohibited_actions
+      - inference_boundary
+      - training_use_restriction
+    description: >
+      Prevents unauthorized AI interpretation, over-completion, private-context
+      reconstruction, and meaning-boundary violation.
+
+  - id: royalty_os_visibility
+    name: Royalty OS Visibility
+    purpose: Show trace-to-allocation-readiness visibility without guaranteeing payment.
+    components:
+      - trace_events
+      - reference_depth
+      - contribution_score
+      - allocation_readiness_status
+      - estimated_preview
+      - disclaimer
+    description: >
+      Makes value-circulation signals visible while keeping trace evidence,
+      allocation readiness, and final payment execution separate.
+
+  - id: epicenter_network
+    name: Epicenter Network
+    purpose: Visualize resonance and relationships between epicenters.
+    components:
+      - question_resonance
+      - friction_overlap
+      - meaning_distance
+      - trace_connection
+      - influence_path
+      - version_relationship
+    description: >
+      Maps meaning relationships without ranking creators.
+
+  - id: creator_control_dashboard
+    name: Creator Control Dashboard
+    purpose: Provide practical UI controls for creators.
+    components:
+      - disclosure_controls
+      - ai_access_controls
+      - inference_controls
+      - trace_controls
+      - royalty_preview_controls
+      - training_use_controls
+    description: >
+      The main interface where creators decide what is visible, private,
+      AI-readable, summary-only, or inference-protected.
+
+visibility_levels:
+  public:
+    level: 1
+    label: Public
+    description: Visible to readers and AI systems.
+
+  ai_readable:
+    level: 2
+    label: AI-Readable
+    description: Hidden from public UI, readable by authorized AI systems.
+
+  summary_only:
+    level: 3
+    label: Summary-Only
+    description: Only a summary may be used by AI systems.
+
+  friction_only:
+    level: 4
+    label: Friction-Only
+    description: Only the friction category or abstract signal may be disclosed.
+
+  private:
+    level: 5
+    label: Private
+    description: Not visible to readers or AI systems.
+
+epicenter_model:
+  friction_layer:
+    description: Initial contact point between creator and reality.
+    allowed_types:
+      - emotion
+      - body_sensation
+      - social_conflict
+      - cognitive_dissonance
+      - unresolved_question
+      - field_observation
+      - creative_pressure
+      - ethical_discomfort
+      - silence
+      - other
+
+  question_layer:
+    description: Question structure generated from friction.
+    fields:
+      - core_question
+      - sub_questions
+      - question_origin
+      - question_scope
+      - question_status
+
+  meaning_layer:
+    description: Creator-defined meaning boundary and interpretation scope.
+    fields:
+      - meaning_claim
+      - interpretation_boundary
+      - non_public_context_marker
+      - creator_defined_scope
+      - meaning_integrity_notes
+
+proto_friction:
+  description: >
+    Captures unresolved or pre-verbal friction without forcing AI-generated completion.
+  fields:
+    status:
+      allowed_values:
+        - unresolved
+        - partially_verbalized
+        - converted_to_question
+        - archived
+    input_type:
+      allowed_values:
+        - text_fragment
+        - voice_note
+        - handwritten_note
+        - image_note
+        - body_sensation_marker
+        - silence_marker
+        - other
+    ai_completion_allowed:
+      type: boolean
+      default: false
+    visibility:
+      allowed_values:
+        - private
+        - friction_only
+        - summary_only
+        - ai_readable
+        - public
+
+circle_versioning:
+  description: >
+    Tracks changes in friction, question, meaning boundary, disclosure, and AI-use permissions.
+  fields:
+    circle_version_id:
+      example: circle_v0.1
+    previous_version:
+      example: null
+    change_type:
+      allowed_values:
+        - initial_record
+        - friction_update
+        - question_refinement
+        - meaning_boundary_update
+        - visibility_update
+        - no_inference_policy_update
+        - trace_policy_update
+        - royalty_visibility_update
+    change_summary:
+      type: string
+    timestamp:
+      format: date-time
+
+no_inference_policy:
+  description: >
+    Defines protected fields and prohibited AI actions.
+  fields:
+    enabled:
+      type: boolean
+      default: false
+    protected_fields:
+      examples:
+        - initial_friction
+        - deep_layer
+        - private_creator_note
+        - proto_friction
+        - meaning_boundary
+    prohibited_actions:
+      allowed_values:
+        - infer_intent
+        - reconstruct_private_context
+        - summarize_protected_fields
+        - convert_friction_to_diagnosis
+        - expand_meaning_boundary
+        - use_for_training
+        - generate_psychological_profile
+        - disclose_hidden_context
+    enforcement_level:
+      allowed_values:
+        - advisory
+        - platform_required
+        - ai_system_required
+        - blocking
+
+royalty_os_visibility:
+  description: >
+    Displays trace-to-allocation-readiness information without guaranteeing payment.
+  fields:
+    trace_contribution_score:
+      type: number
+      minimum: 0.0
+    allocation_readiness:
+      allowed_values:
+        - not_applicable
+        - eligible_for_review
+        - review_required
+        - blocked
+        - disputed
+    estimated_preview:
+      fields:
+        amount:
+          type: number
+        currency:
+          example: JPY
+        guaranteed:
+          type: boolean
+          default: false
+    disclaimer_required:
+      type: boolean
+      default: true
+    required_disclaimer: >
+      This preview is an estimation only. It does not guarantee payment,
+      ownership, entitlement, or final allocation.
+
+epicenter_network:
+  description: >
+    Represents relationships between epicenters without ranking creators.
+  relationship_types:
+    - question_resonance
+    - friction_overlap
+    - meaning_distance
+    - trace_connection
+    - influence_path
+    - version_relationship
+    - shared_context
+    - thematic_adjacency
+  fields:
+    related_epicenters:
+      type: array
+      item_fields:
+        - id
+        - relation_type
+        - strength
+        - visibility
+        - explanation
+
+creator_control_dashboard:
+  description: >
+    Practical UI layer where creators define disclosure, AI access,
+    inference restrictions, trace visibility, and royalty-readiness visibility.
+  controls:
+    core_question_visibility:
+      uses: visibility_levels
+    initial_friction_visibility:
+      uses: visibility_levels
+    deep_layer_visibility:
+      uses: visibility_levels
+      default: private
+    proto_friction_enabled:
+      type: boolean
+    trace_visibility_allowed:
+      type: boolean
+    royalty_os_preview_allowed:
+      type: boolean
+    ai_training_use_allowed:
+      type: boolean
+      default: false
+    no_inference_policy_enabled:
+      type: boolean
+      default: false
+
+example_control_object:
+  creator_controls:
+    core_question_visibility: public
+    initial_friction_visibility: friction_only
+    deep_layer_visibility: private
+    proto_friction_enabled: true
+    trace_visibility_allowed: true
+    royalty_os_preview_allowed: true
+    ai_training_use_allowed: false
+    no_inference_policy_enabled: true
+
+  no_inference_policy:
+    enabled: true
+    protected_fields:
+      - initial_friction
+      - deep_layer
+      - private_creator_note
+    prohibited_actions:
+      - infer_intent
+      - reconstruct_private_context
+      - summarize_protected_fields
+      - use_for_training
+    enforcement_level: platform_required
+
+  circle_version:
+    circle_version_id: circle_v0.1
+    previous_version: null
+    change_type:
+      - initial_record
+    change_summary: Initial creator-defined epicenter structure.
+    timestamp: "2026-05-28T00:00:00Z"
+
+non_goals:
+  - Define a final production UI.
+  - Replace AI Purity Detection scoring.
+  - Determine legal authorship.
+  - Determine copyright ownership.
+  - Guarantee royalty payment.
+  - Rank creators by purity.
+  - Expose private creator context.
+  - Force creators to disclose deep meaning structures.
+  - Allow AI systems to infer beyond permitted boundaries.
+  - Define a final platform standard.
+  - Replace human or multi-wing review.
+
+future_extensions:
+  - JSON Schema for Purity UI Control objects.
+  - Example YAML objects for creator controls and visibility settings.
+  - API profile for platform integration.
+  - Relationship document to AI Purity Detection Algorithm v0.2.
+  - Relationship document to Consciousness Circle.
+  - Relationship document to Royalty OS.
+  - Platform UI mock for creator dashboard.
+  - Accessibility-friendly UI labels.
+  - Multilingual field definitions.
+
+summary: >
+  Purity UI Control Architecture v0.1 defines a draft UI-control layer for
+  AI-mediated platforms. It connects human friction, question formation,
+  meaning structure, creator control, AI-readable boundaries, trace visibility,
+  value circulation, and epicenter networks. Its purpose is to prevent
+  human-origin meaning from becoming invisible infrastructure.
