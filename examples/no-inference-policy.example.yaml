@@ -1,4 +1,3 @@
-```yaml
 schema_version: "0.1.0"
 object_type: "purity_ui_control"
 id: "no_inference_policy_example_001"
@@ -108,5 +107,5 @@ notes: >
   visible, AI systems must not infer private context, summarize protected fields,
   generate psychological profiles, resolve unfinished friction, or use protected
   meaning structures for training.
-```
+
 
