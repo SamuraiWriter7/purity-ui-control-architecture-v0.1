@@ -10,39 +10,32 @@ subtitle: "A beginner-friendly explanation of Purity UI"
 author_display_name: "Civilization OS Architect"
 article_type: essay
 language: en
-
 reader_facing_display:
 purity_badge:
 visible: true
 label: "Purity: 87 / High Natural"
 explanation: "Strong human-origin primary context is detected."
-
-```
 epicenter_summary:
-  visible: true
-  core_question: "How can creators preserve the source of meaning in AI-mediated platforms?"
-  initial_friction_label: "ethical discomfort"
-  meaning_boundary_summary: >
-    This article explains Purity UI as a draft creator-control concept,
-    not as a final legal, payment, or platform standard.
-
+visible: true
+core_question: "How can creators preserve the source of meaning in AI-mediated platforms?"
+initial_friction_label: "ethical discomfort"
+meaning_boundary_summary: >
+This article explains Purity UI as a draft creator-control concept,
+not as a final legal, payment, or platform standard.
 trace_summary:
-  visible: true
-  label: "AI reference signals detected"
-  explanation: >
-    Public trace summary is enabled. Private creator context is not shown.
-
+visible: true
+label: "AI reference signals detected"
+explanation: >
+Public trace summary is enabled. Private creator context is not shown.
 royalty_preview:
-  visible: true
-  label: "Estimated allocation-readiness preview"
-  disclaimer: >
-    This preview is an estimation only. It does not guarantee payment,
-    ownership, entitlement, or final allocation.
-
+visible: true
+label: "Estimated allocation-readiness preview"
+disclaimer: >
+This preview is an estimation only. It does not guarantee payment,
+ownership, entitlement, or final allocation.
 creator_boundary_notice:
-  visible: true
-  label: "Creator-defined visibility and inference boundaries are active."
-```
+visible: true
+label: "Creator-defined visibility and inference boundaries are active."
 
 creator_controls:
 core_question_visibility: public
@@ -152,36 +145,32 @@ Both epicenters address creator control over AI interpretation and
 visibility boundaries.
 dispute_status: none
 review_required: false
-
-```
 - id: epicenter_related_002
-  related_circle_version: circle_v0.1
-  relation_type: thematic_adjacency
-  strength: 0.71
-  confidence: medium
-  visibility: summary_only
-  explanation: >
-    Related through adjacent themes of AI-mediated reading, trace visibility,
-    and creator sovereignty.
-  dispute_status: none
-  review_required: false
-
+related_circle_version: circle_v0.1
+relation_type: thematic_adjacency
+strength: 0.71
+confidence: medium
+visibility: summary_only
+explanation: >
+Related through adjacent themes of AI-mediated reading, trace visibility,
+and creator sovereignty.
+dispute_status: none
+review_required: false
 - id: epicenter_related_003
-  related_circle_version: circle_v0.1
-  relation_type: friction_overlap
-  strength: 0.62
-  confidence: medium
-  visibility: summary_only
-  explanation: >
-    Related through an abstract friction pattern around AI systems absorbing
-    human-origin meaning.
-  dispute_status: none
-  review_required: false
-  redaction:
-    enabled: true
-    reason: protected_creator_context
-    public_message: "Detailed friction context is hidden due to creator privacy settings."
-```
+related_circle_version: circle_v0.1
+relation_type: friction_overlap
+strength: 0.62
+confidence: medium
+visibility: summary_only
+explanation: >
+Related through an abstract friction pattern around AI systems absorbing
+human-origin meaning.
+dispute_status: none
+review_required: false
+redaction:
+enabled: true
+reason: protected_creator_context
+public_message: "Detailed friction context is hidden due to creator privacy settings."
 
 notes: >
 This example demonstrates a basic article-page UI configuration for Purity UI
@@ -189,3 +178,4 @@ Control Architecture v0.1. It shows how a reader-facing article page may include
 a Purity badge, public core question, friction-only origin signal, trace summary,
 non-guaranteed Royalty OS preview, and creator-defined inference boundaries
 while keeping proto-friction, deep-layer context, and private creator notes protected.
+
