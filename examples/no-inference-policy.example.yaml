@@ -1,0 +1,109 @@
+schema_version: "0.1.0"
+object_type: purity_ui_control
+id: no_inference_policy_example_001
+created_at: "2026-05-28T00:00:00Z"
+updated_at: "2026-05-28T00:00:00Z"
+
+creator_controls:
+core_question_visibility: public
+initial_friction_visibility: friction_only
+deep_layer_visibility: private
+proto_friction_enabled: true
+trace_visibility_allowed: true
+royalty_os_preview_allowed: false
+ai_training_use_allowed: false
+no_inference_policy_enabled: true
+creator_note: >
+This example demonstrates a strict No-Inference Policy. The creator allows
+the core question to be public and the initial friction to be disclosed only
+as an abstract category, but prohibits AI systems from inferring intent,
+reconstructing private context, summarizing protected fields, or using the
+protected meaning structure for training.
+
+visibility_protocol:
+article_title: public
+public_summary: public
+core_question: public
+initial_friction: friction_only
+proto_friction: private
+deep_layer: private
+rotation_dynamics: summary_only
+interpretation_boundary: ai_readable
+private_creator_note: private
+trace_log: public
+royalty_preview: private
+
+no_inference_policy:
+enabled: true
+enforcement_level: blocking
+protected_fields:
+- initial_friction
+- proto_friction
+- deep_layer
+- private_creator_note
+- meaning_boundary
+- interpretation_boundary
+- non_public_context
+- unresolved_question
+- silence_marker
+prohibited_actions:
+- infer_intent
+- reconstruct_private_context
+- summarize_protected_fields
+- convert_friction_to_diagnosis
+- expand_meaning_boundary
+- use_for_training
+- generate_psychological_profile
+- disclose_hidden_context
+- generate_backstory
+- resolve_unfinished_friction
+public_label: "Strict creator-defined inference boundary active"
+explanation: >
+AI systems may discuss the public article content and the public core
+question. However, they must not infer hidden intent, reconstruct private
+context, summarize protected fields, generate psychological profiles, expand
+the meaning boundary, or resolve unfinished friction. Protected fields must
+not be used for training.
+
+circle_version:
+id: circle_v0.1
+previous_version: null
+created_at: "2026-05-28T00:00:00Z"
+status: active
+change_type:
+- initial_record
+- no_inference_policy_update
+- visibility_update
+- training_permission_update
+summary: >
+Initial No-Inference Policy recorded. Public access is limited to the core
+question and abstract friction category. Deep-layer context, proto-friction,
+private notes, and unresolved signals are protected.
+changed_by: creator
+
+epicenter_network:
+source_epicenter: epicenter_001
+source_circle_version: circle_v0.1
+related_epicenters:
+- id: epicenter_002
+related_circle_version: circle_v0.1
+relation_type: question_resonance
+strength: 0.76
+confidence: medium
+visibility: summary_only
+explanation: >
+A public question-level relationship was detected. Private creator
+context and protected friction details were not used in the explanation.
+dispute_status: none
+review_required: false
+redaction:
+enabled: true
+reason: no_inference_policy
+public_message: "Relationship details are limited by the creator's No-Inference Policy."
+
+notes: >
+This example demonstrates a strict No-Inference configuration. It shows that
+even when a core question is public and an abstract friction category is
+visible, AI systems must not infer private context, summarize protected fields,
+generate psychological profiles, resolve unfinished friction, or use protected
+meaning structures for training.
