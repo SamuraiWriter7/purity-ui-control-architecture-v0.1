@@ -102,24 +102,28 @@ explanation: >
 Both epicenters address creator control over AI interpretation.
 dispute_status: none
 review_required: false
+
+```
 - id: epicenter_003
-related_circle_version: circle_v0.1
-relation_type: friction_overlap
-strength: 0.67
-confidence: medium
-visibility: summary_only
-explanation: >
-Related through an abstract friction category. Detailed private context
-is not exposed.
-dispute_status: none
-review_required: false
-redaction:
-enabled: true
-reason: protected_creator_context
-public_message: "Detailed friction context is hidden due to creator privacy settings."
+  related_circle_version: circle_v0.1
+  relation_type: friction_overlap
+  strength: 0.67
+  confidence: medium
+  visibility: summary_only
+  explanation: >
+    Related through an abstract friction category. Detailed private context
+    is not exposed.
+  dispute_status: none
+  review_required: false
+  redaction:
+    enabled: true
+    reason: protected_creator_context
+    public_message: "Detailed friction context is hidden due to creator privacy settings."
+```
 
 notes: >
 This example demonstrates a creator-controlled configuration where the article
 can show a public core question, friction-only origin signal, public trace
 visibility, and a non-guaranteed Royalty OS preview while protecting private
 meaning structures from AI inference and training use.
+
