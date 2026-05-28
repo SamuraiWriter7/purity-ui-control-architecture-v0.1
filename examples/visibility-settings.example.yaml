@@ -1,4 +1,3 @@
-```yaml
 schema_version: "0.1.0"
 object_type: "purity_ui_control"
 id: "visibility_settings_example_001"
@@ -62,4 +61,4 @@ circle_version:
   changed_by: "creator"
 
 notes: "This example demonstrates the five-level Visibility Protocol: public, ai_readable, summary_only, friction_only, and private. It also shows that visibility does not automatically grant AI training permission or permission to infer protected context."
-```
+
