@@ -1,129 +1,111 @@
 schema_version: "0.1.0"
-object_type: purity_ui_control
-id: creator_controls_example_001
+object_type: "purity_ui_control"
+id: "creator_controls_example_001"
 created_at: "2026-05-28T00:00:00Z"
 updated_at: "2026-05-28T00:00:00Z"
 
 creator_controls:
-core_question_visibility: public
-initial_friction_visibility: friction_only
-deep_layer_visibility: private
+core_question_visibility: "public"
+initial_friction_visibility: "friction_only"
+deep_layer_visibility: "private"
 proto_friction_enabled: true
 trace_visibility_allowed: true
 royalty_os_preview_allowed: true
 ai_training_use_allowed: false
 no_inference_policy_enabled: true
-creator_note: >
-The creator allows the core question to be public and the initial friction
-to be shown only as an abstract friction category. Deep context remains private.
+creator_note: "The creator allows the core question to be public and the initial friction to be shown only as an abstract friction category. Deep context remains private."
 
 visibility_protocol:
-article_title: public
-public_summary: public
-core_question: public
-initial_friction: friction_only
-proto_friction: private
-deep_layer: private
-rotation_dynamics: summary_only
-interpretation_boundary: ai_readable
-private_creator_note: private
-trace_log: public
-royalty_preview: public
+article_title: "public"
+public_summary: "public"
+core_question: "public"
+initial_friction: "friction_only"
+proto_friction: "private"
+deep_layer: "private"
+rotation_dynamics: "summary_only"
+interpretation_boundary: "ai_readable"
+private_creator_note: "private"
+trace_log: "public"
+royalty_preview: "public"
 
 no_inference_policy:
 enabled: true
-enforcement_level: platform_required
+enforcement_level: "platform_required"
 protected_fields:
-- initial_friction
-- proto_friction
-- deep_layer
-- private_creator_note
-- interpretation_boundary
+- "initial_friction"
+- "proto_friction"
+- "deep_layer"
+- "private_creator_note"
+- "interpretation_boundary"
 prohibited_actions:
-- infer_intent
-- reconstruct_private_context
-- summarize_protected_fields
-- convert_friction_to_diagnosis
-- use_for_training
-- generate_psychological_profile
+- "infer_intent"
+- "reconstruct_private_context"
+- "summarize_protected_fields"
+- "convert_friction_to_diagnosis"
+- "use_for_training"
+- "generate_psychological_profile"
 public_label: "Creator-defined inference boundary active"
-explanation: >
-AI systems may discuss the public core question, but they must not infer
-private context from the friction category or reconstruct the creator's
-protected deep-layer meaning structure.
+explanation: "AI systems may discuss the public core question, but they must not infer private context from the friction category or reconstruct the creator's protected deep-layer meaning structure."
 
 circle_version:
-id: circle_v0.1
+id: "circle_v0.1"
 previous_version: null
 created_at: "2026-05-28T00:00:00Z"
-status: active
+status: "active"
 change_type:
-- initial_record
-- visibility_update
-- no_inference_policy_update
-summary: >
-Initial creator-control settings recorded. The core question is public,
-initial friction is friction-only, and the deep layer is private.
-changed_by: creator
+- "initial_record"
+- "visibility_update"
+- "no_inference_policy_update"
+summary: "Initial creator-control settings recorded. The core question is public, initial friction is friction-only, and the deep layer is private."
+changed_by: "creator"
 
 royalty_visibility:
 enabled: true
-visibility: public
+visibility: "public"
 trace_contribution_score: 4.1
-allocation_readiness: review_required
+allocation_readiness: "review_required"
 estimated_preview:
 amount: 128
-currency: JPY
+currency: "JPY"
 guaranteed: false
-calculation_basis: trace_contribution_score
+calculation_basis: "trace_contribution_score"
 reference_depth:
-level: structural_reference
+level: "structural_reference"
 confidence: 0.74
 source_categories:
-- ai_search
-- rag_system
-- platform_ai_editor
+- "ai_search"
+- "rag_system"
+- "platform_ai_editor"
 disclaimer_required: true
-required_disclaimer: >
-This preview is an estimation only. It does not guarantee payment,
-ownership, entitlement, or final allocation.
+required_disclaimer: "This preview is an estimation only. It does not guarantee payment, ownership, entitlement, or final allocation."
 
 epicenter_network:
-source_epicenter: epicenter_001
-source_circle_version: circle_v0.1
+source_epicenter: "epicenter_001"
+source_circle_version: "circle_v0.1"
 related_epicenters:
-- id: epicenter_002
-related_circle_version: circle_v0.1
-relation_type: question_resonance
+- id: "epicenter_002"
+related_circle_version: "circle_v0.1"
+relation_type: "question_resonance"
 strength: 0.82
-confidence: high
-visibility: public
-explanation: >
-Both epicenters address creator control over AI interpretation.
-dispute_status: none
+confidence: "high"
+visibility: "public"
+explanation: "Both epicenters address creator control over AI interpretation."
+dispute_status: "none"
 review_required: false
+- id: "epicenter_003"
+related_circle_version: "circle_v0.1"
+relation_type: "friction_overlap"
+strength: 0.67
+confidence: "medium"
+visibility: "summary_only"
+explanation: "Related through an abstract friction category. Detailed private context is not exposed."
+dispute_status: "none"
+review_required: false
+redaction:
+enabled: true
+reason: "protected_creator_context"
+public_message: "Detailed friction context is hidden due to creator privacy settings."
 
-```
-- id: epicenter_003
-  related_circle_version: circle_v0.1
-  relation_type: friction_overlap
-  strength: 0.67
-  confidence: medium
-  visibility: summary_only
-  explanation: >
-    Related through an abstract friction category. Detailed private context
-    is not exposed.
-  dispute_status: none
-  review_required: false
-  redaction:
-    enabled: true
-    reason: protected_creator_context
-    public_message: "Detailed friction context is hidden due to creator privacy settings."
-```
+notes: "This example demonstrates a creator-controlled configuration where the article can show a public core question, friction-only origin signal, public trace visibility, and a non-guaranteed Royalty OS preview while protecting private meaning structures from AI inference and training use."
 
-notes: >
-This example demonstrates a creator-controlled configuration where the article
-can show a public core question, friction-only origin signal, public trace
-visibility, and a non-guaranteed Royalty OS preview while protecting private
-meaning structures from AI inference and training use.
 
